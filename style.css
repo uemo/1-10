@@ -48,6 +48,11 @@ header{
 	display: inline-block;
 }
 
+.nav-list-item2 {
+	size: 16px;
+	color: black;
+}
+
 .main-visual {
 	width:100%;
 	height:650px;
@@ -188,7 +193,13 @@ header{
 	text-align:center;
 	margin-left:10px;
 	float:left;
+}
 
+.Strength3-box {
+	width:320px;
+	text-align:center;
+	margin-left:10px;
+	float:left;
 }
 
 .Strength-logo i {
@@ -306,6 +317,12 @@ header{
 	padding-top:20px;
 }
 
+.Contact-box2-title3 {
+	font-size:20px;
+	color:#000000;
+	padding-bottom:5px;
+}
+
 .Contact-box2-text {
 	font-size:16px;
 	color:#000000;
@@ -343,4 +360,213 @@ footer {
 
 .footer-text {
 	font-size:16px;
+}
+
+/*下記、ハンバーガーメニュー記載*/
+/*メニュー部分*/
+#ham-menu {
+    background-color: #EC715F; /*メニュー背景色*/
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px 40px; /*メニュー内部上下左右余白*/
+    position: fixed;
+    right: -300px; /*メニュー横幅①と合わせる*/
+    top: 0;
+    transition: transform 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
+    width: 300px; /*メニュー横幅①*/
+    z-index: 1000;
+}
+
+/*メニューアイコン部分は疑似要素で*/
+#ham-menu::before {
+    background-color: #fff; /*ボタン部分背景色*/
+    border-radius: 0 0 0 10px; /*左下角丸*/
+    color: #333; /*アイコン（フォント）色*/
+    content: "≡"; /*メニューアイコン*/
+    display: block;
+    font-size: 50px; /*アイコン（フォント）サイズ*/
+    height: 50px;
+    line-height: 50px; /*縦位置中央化*/
+    position: absolute;
+    right: 100%;
+    text-align: center;
+    top: 0;
+    width: 50px;
+}
+
+/*透過背景部分*/
+#menu-background {
+    background-color: #333; /*黒背景部分背景色*/
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.3s linear 0s; /*0.3s は変化するのにかかる時間*/
+    width: 100%;
+    z-index: -1;
+}
+
+/*hover 時の処理*/
+#ham-menu:hover {
+    transform: translate(-300px); /*メニュー横幅①と合わせる*/
+}
+
+#ham-menu:hover + #menu-background {
+    opacity: 0.5; /*黒背景部分透過度*/
+    z-index: 999;
+}
+
+
+/*レスポンシブ対応記載*/
+
+@media screen and (min-width:767px) {
+	#ham-menu {
+		display:none;
+	}
+}
+
+@media screen and (max-width:767px) {
+	.nav-list {
+		display:none;
+	}
+
+	.top-box {
+		width:90%;
+	}
+
+	.main-visual {
+		background-image:url(img/code.png);
+	}
+
+	.main-visual-text1 {
+	font-size:40px;
+    }
+
+    .main-visual-text2 {
+    	padding-top:10px;
+    	font-size:18px;
+    }
+
+    .Portfolio-text {
+    	padding-right:5%;
+    	padding-left:5%;
+    }
+
+
+    .Portfolio-box2 {
+    	width:300px;
+    	height:770px;
+    }
+
+    .image1 {
+    	display:none;
+    }
+
+    .image2 {
+    	margin-left:0px;
+    }
+
+    .image3 {
+    	display:none;
+    }
+
+    .image5 {
+    	display:none;
+    }
+
+    .image6 {
+    	margin-left:0px;
+    }
+
+    .feature-box2 {
+	    width: 90%;
+	    margin:0 auto;
+    }
+
+    .Strength1-box {
+	    width:90%;
+	    margin:0 auto;
+	    text-align:center;
+	    float:none;
+	    padding-bottom:10px;
+    }
+
+    .Strength2-box {
+	    width:90%;
+	    margin:0 auto;
+	    text-align:center;
+	    float:none;
+	    padding-bottom:10px;
+    }
+
+    .Strength3-box {
+	    width:90%;
+	    margin:0 auto;
+	    text-align:center;
+	    float:none;
+    }
+
+	.Strength-text {
+		text-align:center;
+	}
+
+	.Profile-box2 {
+	    width:90%;
+	    margin:0 auto;
+    }
+
+    .Profile-image-box {
+    	width:90%;
+    	margin:0 auto;
+    	float:none;
+    }
+
+    .Profile-textbox {
+	    width:90%;
+	    margin:0 auto;
+	    text-align:center;
+	    float:none;
+	    padding-top:20px;
+    }
+
+    .Contact-box2 {
+	    width:90%;
+	    margin:0 auto;
+	}
+
+	.Contact-box2-left {
+	    width:90%;
+	    float:none;
+	    margin:0 auto;
+    }
+
+    .Contact-box2-left-intobox {
+	    width:90%;
+	    text-align:center;
+	    margin:0 auto;
+	}
+
+	.Contact-box2-right {
+	    width:90%;
+	    margin:0 auto;
+	    float:none;
+    }
+
+    .Contact-box2-right-intobox {
+	    width:90%;
+	    text-align:center;
+	    margin:0 auto;
+    }
+
+    .Contact-box2-title3 {
+	    padding-top:20px;
+    }
+
+    footer {
+	height:60px;
+	line-height:60px;
+    }
+
 }
